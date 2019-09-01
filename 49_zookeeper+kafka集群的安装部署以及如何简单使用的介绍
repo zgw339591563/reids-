@@ -75,6 +75,11 @@ vi myid
 0
 
 在另外两个节点上按照上述步骤配置ZooKeeper，使用scp将zk和.bashrc拷贝到eshop-cache02和eshop-cache03上即可。唯一的区别是标识号分别设置为1和2。
+scp ~/.bashrc root@eshop-cache02:~/
+scp ~/.bashrc root@eshop-cache03:~/
+
+scp -r /usr/local/zk root@eshop-cache02:/usr/local/
+scp -r /usr/local/zk root@eshop-cache03:/usr/local/
 
 分别在三台机器上执行：zkServer.sh start。
 检查ZooKeeper状态：zkServer.sh status，应该是一个leader，两个follower
@@ -93,6 +98,8 @@ vi ~/.bashrc
 export SCALA_HOME=/usr/local/scala
 export PATH=$SCALA_HOME/bin
 source ~/.bashrc
+scp ~/.bashrc root@eshop-cache02:~/
+scp ~/.bashrc root@eshop-cache03:~/
 
 查看scala是否安装成功：scala -version
 
