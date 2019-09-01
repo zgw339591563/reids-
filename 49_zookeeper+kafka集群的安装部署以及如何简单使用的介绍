@@ -54,7 +54,10 @@ java高级工程师的思想，在干活儿，在思考，jvm，宏观的思考�
 配置zookeeper相关的环境变量
 vi ~/.bashrc
 export ZOOKEEPER_HOME=/usr/local/zk
+#centos6
 export PATH=$ZOOKEEPER_HOME/bin
+#centos7的配置
+export PATH=$PATH:$ZOOKEEPER_HOME/bin
 source ~/.bashrc
 
 cd zk/conf
