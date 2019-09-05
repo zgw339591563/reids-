@@ -57,8 +57,9 @@ shop level: {* shopLevel *}<br/>
 shop good cooment rate: {* shopGoodCommentRate *}<br/>
 
 8、将渲染后的网页模板作为http响应，返回给分发层nginx
+cd /usr/servers/nginx/conf
 
-hello.conf中：
+nginx.conf中添加：
 
 lua_shared_dict my_cache 128m;
 
